@@ -10,12 +10,12 @@ using UnityEngine.UI;
 public class Scoremanager : MonoBehaviour
 {
     public static Scoremanager instance;
-    public String PlyrName;
-    public InputField inputField;
+    public String PlyName;
+    public InputField InputField;
 
     private void Awake()
     {
-        if (instance != null)
+        if(instance != null)
         {
             Destroy(gameObject);
             return;
@@ -23,16 +23,12 @@ public class Scoremanager : MonoBehaviour
         instance = this;
         DontDestroyOnLoad(gameObject);
 
-        PlyrName = "NameTEst";
-        inputField.onValueChanged.AddListener(UpdatePlayerName);
+        InputField.onEndEdit.AddListener(NewName);
     }
 
-    public void UpdatePlayerName(string input)
+   public void NewName(string InputName)
     {
-        PlyrName = input;
-        Debug.Log("Player Name Updated: " + PlyrName);
+       PlyName = InputName;
     }
 
 }
-    
-

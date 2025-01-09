@@ -545,6 +545,8 @@ MonoBehaviour:
   Ball: {fileID: 177912862}
   ScoreText: {fileID: 188020406}
   GameOverText: {fileID: 474497238}
+  m_Points: 0
+  bestScoreManager2: {fileID: 2011774130}
 --- !u!1 &455529321
 GameObject:
   m_ObjectHideFlags: 0
@@ -866,7 +868,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 4.7, y: 5.1799927}
+  m_AnchoredPosition: {x: 4.7, y: -393.66}
   m_SizeDelta: {x: 600, y: 40}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &733421794
@@ -923,7 +925,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1973b52b56dbafa44bc8ac99846b8111, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Plyr: {fileID: 733421794}
+  NameMain: {fileID: 733421794}
+  Manager: {fileID: 450625942}
+  PlyName: 
 --- !u!1 &850602367
 GameObject:
   m_ObjectHideFlags: 0
@@ -1722,6 +1726,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1772894882}
   m_CullTransparentMesh: 1
+--- !u!1 &2011774127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2011774128}
+  - component: {fileID: 2011774130}
+  m_Layer: 0
+  m_Name: BestScorePrint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2011774128
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011774127}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2011774130
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011774127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b22cb3e8e2d729141b8fedb69b5233a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BestScoreDisplay2: {fileID: 2078529056}
+  MenuPlyr2: {fileID: 733421794}
+  IntScore2: {fileID: 450625942}
 --- !u!1 &2078529054
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,7 +1798,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078529054}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1756,7 +1807,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 490.81, y: -325.3}
+  m_AnchoredPosition: {x: 190.39996, y: 45.67996}
   m_SizeDelta: {x: 600, y: 122.2}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &2078529056
@@ -1792,7 +1843,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Best Score: \nName : 0"
+  m_Text: 'Best Score: Name : 0'
 --- !u!222 &2078529057
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1814,6 +1865,7 @@ GameObject:
   - component: {fileID: 2137539496}
   - component: {fileID: 2137539495}
   - component: {fileID: 2137539499}
+  - component: {fileID: 2137539500}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1920,6 +1972,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fc0df930e62100468be97fee08695ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2137539500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137539494}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8580e2d95015a9448d1183d7b563f3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MainScore: {fileID: 450625942}
+  PlyrNameBS: {fileID: 733421796}
+  BestScoreText: {fileID: 2078529056}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1930,5 +1997,6 @@ SceneRoots:
   - {fileID: 1550576933}
   - {fileID: 97436045}
   - {fileID: 450625941}
-  - {fileID: 2137539498}
   - {fileID: 455529324}
+  - {fileID: 2011774128}
+  - {fileID: 2137539498}

@@ -166,8 +166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01cc9248884df2144866150d02f849b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlyrName: 
-  inputField: {fileID: 920734189}
+  PlyName: 
+  InputField: {fileID: 920734189}
 --- !u!1 &455529321
 GameObject:
   m_ObjectHideFlags: 0
@@ -895,8 +895,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2137539499}
         m_TargetAssemblyTypeName: ScenesManager, Assembly-CSharp
-        m_MethodName: StartGame
-        m_Mode: 3
+        m_MethodName: ExitGame
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1207,7 +1207,7 @@ MonoBehaviour:
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: Enter Name
@@ -1264,7 +1264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07e681cc3b599c4d88e3b03a4b8bdd9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputField: {fileID: 920734189}
+  InpuText: {fileID: 920734189}
 --- !u!1 &2078529054
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,6 +1276,7 @@ GameObject:
   - component: {fileID: 2078529055}
   - component: {fileID: 2078529057}
   - component: {fileID: 2078529056}
+  - component: {fileID: 2078529058}
   m_Layer: 5
   m_Name: ScoreText (1)
   m_TagString: Untagged
@@ -1344,6 +1345,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2078529054}
   m_CullTransparentMesh: 1
+--- !u!114 &2078529058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2078529054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74cc660f28de63e429d5885fd9dc35a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  BScoreUpdated: {fileID: 2078529056}
 --- !u!1 &2137539494
 GameObject:
   m_ObjectHideFlags: 0

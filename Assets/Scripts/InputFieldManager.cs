@@ -5,15 +5,17 @@ using UnityEngine.UI;
 
 public class InputFieldManager : MonoBehaviour
 {
-    public InputField inputField;
-    void Start()
+    public InputField InpuText;
+
+    private void Start()
     {
-        inputField.text = Scoremanager.instance.PlyrName;
-        inputField.onEndEdit.AddListener(UpdateName);
+        InpuText.text = Scoremanager.instance.PlyName;
+        InpuText.onEndEdit.AddListener(UpdateName);
+
+    }
+    void UpdateName(string value)
+    {
+        Scoremanager.instance.PlyName = value;
     }
 
-    private void UpdateName(string value)
-    {
-        Scoremanager.instance.PlyrName = value;
-    }
 }
